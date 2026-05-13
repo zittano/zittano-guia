@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Turno Consular - Zittano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-italia: #009246;
+            --rojo-italia: #CE2B37;
+            --crema: #FFF8F0;
+            --negro-suave: #2C2C2C;
+            --gris-medio: #666;
+            --dorado: #C9A961;
+            --azul-oscuro: #1a365d;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--crema);
+            color: var(--negro-suave);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Decoración de fondo sutil */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background-image: url('zittano-logo.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.025;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header Editorial */
+        .header {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, #2d4a6f 100%);
+            color: white;
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🇮🇹';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .brand {
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .title {
+            font-family: 'Crimson Text', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 0;
+            padding: 0 30px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Tarjeta introductoria */
+        .intro-card {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            border-left: 6px solid var(--verde-italia);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .intro-card h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.2rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .intro-card p {
+            font-size: 1.1rem;
+            color: var(--gris-medio);
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid var(--dorado);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: var(--negro-suave);
+        }
+
+        /* Pasos principales */
+        .step-section {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-section:nth-child(1) { animation-delay: 0.3s; }
+        .step-section:nth-child(2) { animation-delay: 0.4s; }
+        .step-section:nth-child(3) { animation-delay: 0.5s; }
+        .step-section:nth-child(4) { animation-delay: 0.6s; }
+        .step-section:nth-child(5) { animation-delay: 0.7s; }
+        .step-section:nth-child(6) { animation-delay: 0.8s; }
+
+        .step-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--verde-italia), #00d084);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 146, 70, 0.3);
+        }
+
+        .step-header {
+            margin-bottom: 25px;
+            padding-right: 80px;
+        }
+
+        .step-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .step-subtitle {
+            font-size: 1rem;
+            color: var(--gris-medio);
+            font-style: italic;
+        }
+
+        .step-content {
+            margin-top: 30px;
+        }
+
+        .step-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .step-content ul, .step-content ol {
+            margin: 20px 0 20px 25px;
+        }
+
+        .step-content li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Tip boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #1976d2;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            font-size: 1.5rem;
+            position: absolute;
+            top: 20px;
+            left: -38px;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-box h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: #1565c0;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: #0d47a1;
+            font-size: 1rem;
+        }
+
+        /* Warning boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #f57c00;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            font-size: 1.5rem;
+            position: absolute;
+            top: 20px;
+            left: -38px;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .warning-box h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: #e65100;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #bf360c;
+            font-size: 1rem;
+        }
+
+        /* Success box */
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid var(--verde-italia);
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .success-box h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Checklist interactiva */
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .checklist-item:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            margin-top: 2px;
+            accent-color: var(--verde-italia);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .checklist-item.checked {
+            opacity: 0.6;
+            background: #e8f5e9;
+        }
+
+        .checklist-item.checked label {
+            text-decoration: line-through;
+        }
+
+        /* Timeline visual */
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--verde-italia), var(--dorado));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--verde-italia);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--verde-italia);
+        }
+
+        .timeline-item h5 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: var(--gris-medio);
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--azul-oscuro);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item p {
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Botón de descarga */
+        .download-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--verde-italia), #00d084);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 30px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 146, 70, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 146, 70, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .step-section, .intro-card {
+                padding: 30px 25px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                top: 20px;
+                right: 20px;
+            }
+
+            .step-header {
+                padding-right: 65px;
+            }
+
+            .step-title {
+                font-size: 1.5rem;
+            }
+
+            .tip-box::before,
+            .warning-box::before {
+                display: none;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+        }
+
+        /* Botón imprimir */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--dorado), #d4af37);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.5rem;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(201, 169, 97, 0.5);
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .step-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">
+                <img src="zittano-logo.jpg" alt="Zittano" style="max-width: 280px; height: auto; margin-bottom: 20px; filter: brightness(1.2);">
+            </div>
+            <h1 class="title">Guía Completa<br>Turno Consular</h1>
+            <p class="subtitle">Todo lo que necesitás saber después de recibir tu carpeta para presentarla en el consulado italiano</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Intro -->
+        <div class="intro-card">
+            <h2>¡Felicitaciones! 🎉</h2>
+            <p>
+                Tu carpeta consular está completa y lista para ser presentada. Este es un momento muy importante en tu camino hacia la ciudadanía italiana. En esta guía encontrarás todo lo que necesitás saber para los próximos pasos.
+            </p>
+            <div class="highlight-box">
+                <p>
+                    <strong>📋 Importante:</strong> Los tiempos y procedimientos pueden variar según el consulado. Esta guía proporciona lineamientos generales, pero te recomendamos verificar siempre la información específica de tu consulado.
+                </p>
+            </div>
+        </div>
+
+        <!-- Paso 1: Verificar la carpeta -->
+        <div class="step-section">
+            <div class="step-number">1</div>
+            <div class="step-header">
+                <h2 class="step-title">Verificar tu Carpeta</h2>
+                <p class="step-subtitle">Asegurate de que todo esté completo</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    Tu carpeta fue preparada por nosotros con todos los documentos necesarios. Antes de sacar turno, simplemente verificá que:
+                </p>
+
+                <ul>
+                    <li>La carpeta esté completa (no falta ningún papel)</li>
+                    <li>Todos los documentos estén en el orden correcto</li>
+                    <li>No haya roturas, manchas o daños en ningún documento</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>⚠️ Verificación de Domicilio</h4>
+                    <p>
+                        Muy importante: El domicilio de tu DNI debe coincidir con alguno de los servicios habilitados por el consulado que te corresponde. Si tu DNI tiene un domicilio de otra jurisdicción, contactanos para que te asesoremos.
+                    </p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Tip que te va a salvar</h4>
+                    <p>
+                        📸 <strong>Escaneá o fotografiá toda tu carpeta</strong> antes de ir al consulado. Si algún documento se pierde o daña, vas a tener respaldo digital. Guardalo en tu celular, email y nube. Mejor prevenir que lamentar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 2: Turno consular -->
+        <div class="step-section">
+            <div class="step-number">2</div>
+            <div class="step-header">
+                <h2 class="step-title">Tu Turno Consular</h2>
+                <p class="step-subtitle">Nosotros lo gestionamos por vos</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    <strong>No te preocupes por conseguir turno.</strong> En Zittano contamos con un equipo especializado que gestiona turnos en todos los consulados del país desde hace más de un año.
+                </p>
+
+                <div class="success-box">
+                    <h4>✅ ¿Qué hacemos nosotros?</h4>
+                    <p style="margin: 0; color: #2e7d32;">
+                        Nos encargamos de conseguir tu turno en la plataforma Prenot@mi del consulado que te corresponda. Una vez confirmado, te avisamos con fecha, hora y ubicación exacta.
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Muy Importante - Verificá tus datos</h4>
+                    <p>
+                        Es fundamental que verifiques que los datos de tu DNI sean exactamente los mismos que registraste en Prenot@mi. Una vez que sacamos el turno, <strong>NO se puede cancelar ni modificar</strong>. Cualquier discrepancia puede resultar en que no te atiendan en el consulado.
+                    </p>
+                </div>
+
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 1.5rem; margin: 30px 0 15px; color: var(--azul-oscuro);">¿Qué tenés que hacer vos?</h3>
+                
+                <p style="font-size: 1.2rem; color: var(--verde-italia); font-weight: 600; margin: 20px 0;">
+                    Relajarte en el sillón con un buen café ☕ mientras nosotros cazamos tu turno. Cuando esté listo, te avisamos.
+                </p>
+
+                <div class="tip-box">
+                    <h4>¿Por qué es tan difícil conseguir turno?</h4>
+                    <p>
+                        Los turnos se agotan literalmente en minutos. Miles de personas intentan sacar turno al mismo tiempo. Nuestro equipo monitorea las agendas consulares 24/7 para conseguirte uno lo antes posible. Cuando te confirmemos tu turno, guardá bien la fecha - es oro puro.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 3: Preparar la presentación -->
+        <div class="step-section">
+            <div class="step-number">3</div>
+            <div class="step-header">
+                <h2 class="step-title">Preparar tu Presentación</h2>
+                <p class="step-subtitle">Los días previos al turno</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    Una vez que tengas tu turno confirmado, es momento de prepararte para la presentación. La organización es clave para que todo salga perfecto.
+                </p>
+
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 1.5rem; margin: 30px 0 15px; color: var(--azul-oscuro);">Días antes del turno:</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5>Una semana antes</h5>
+                        <p>Revisá tu mail porque el consulado seguramente te envíe información para que realices el <strong>pago de la tasa consular</strong> y para que completes los <strong>formularios</strong>.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>3-4 días antes</h5>
+                        <p>Verificá la ubicación del consulado, cómo llegar, y cuánto tiempo de viaje necesitás. Planificá salir con tiempo extra.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>1 día antes</h5>
+                        <p>Prepará todo lo que vas a llevar: carpeta, documentos originales, DNI, pasaporte, comprobante de turno.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>El mismo día</h5>
+                        <p>Llegá 15-20 minutos antes. Llevá agua y algo para leer por si hay demora.</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Tip para los formularios</h4>
+                    <p>
+                        Los formularios vienen en italiano, pero siempre tienen la traducción en castellano al lado o debajo. Prestá atención a esa parte. Si tenés dudas, Google Traductor es tu mejor amigo - los formularios son muy fáciles de completar con un poco de ayuda digital.
+                    </p>
+                </div>
+
+                <div class="checklist">
+                    <h4>🎒 Qué llevar el día del turno</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" id="llevar1">
+                        <label for="llevar1">Tu carpeta completa (la que te entregamos)</label>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" id="llevar2">
+                        <label for="llevar2">DNI argentino original y vigente</label>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" id="llevar3">
+                        <label for="llevar3">Copia del DNI argentino (si hay alguna persona de la línea que esté viva)</label>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" id="llevar4">
+                        <label for="llevar4">Comprobante de pago de la tasa consular (impreso)</label>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" id="llevar5">
+                        <label for="llevar5">Comprobante de turno (impreso)</label>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Muy Importante</h4>
+                    <p>
+                        NO olvides tu DNI y pasaporte originales. Sin estos documentos, no podrán atenderte aunque tengas todos los demás papeles en orden. Algunos consulados son muy estrictos con la puntualidad - si llegás tarde, podés perder tu turno.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 4: El día del turno -->
+        <div class="step-section">
+            <div class="step-number">4</div>
+            <div class="step-header">
+                <h2 class="step-title">El Día del Turno</h2>
+                <p class="step-subtitle">Qué esperar en el consulado</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    Llegó el momento. El funcionario consular revisará tu carpeta y verificará que todo esté en orden. Es un proceso simple y rápido.
+                </p>
+
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 1.5rem; margin: 30px 0 15px; color: var(--azul-oscuro);">Qué va a pasar:</h3>
+
+                <ul>
+                    <li>Revisión de tu carpeta documento por documento</li>
+                    <li>Algunas preguntas sobre tu ascendencia italiana (fechas, lugares, nombres)</li>
+                    <li>Registro de tu expediente en el sistema consular</li>
+                    <li>Te darán un comprobante con tu número de expediente</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>Consejos para el momento</h4>
+                    <p>
+                        • Mantené la calma, es solo una verificación de rutina<br>
+                        • Respondé con confianza lo que sepas<br>
+                        • Sé amable con el funcionario<br>
+                        • Si no sabés algo exacto, no inventes - decí que no estás seguro/a
+                    </p>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Al finalizar</h4>
+                    <p style="margin: 0; color: #2e7d32;">
+                        Te darán un comprobante con tu número de expediente. <strong>Guardalo MUY BIEN</strong> - es tu única prueba de que el trámite está en curso y lo vas a necesitar para hacer seguimiento.
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Muy Importante</h4>
+                    <p>
+                        <strong>NO olvides tu DNI.</strong> Sin este documento, no podrán atenderte aunque tengas todos los demás papeles en orden. Algunos consulados son muy estrictos con la puntualidad - si llegás tarde, podés perder tu turno.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 5: Después de la presentación -->
+        <div class="step-section">
+            <div class="step-number">5</div>
+            <div class="step-header">
+                <h2 class="step-title">Después de la Presentación</h2>
+                <p class="step-subtitle">El período de espera</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    Una vez presentada tu carpeta, tu expediente será enviado a Italia para verificación final y aprobación.
+                </p>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>⏰ Tiempos de espera:</strong> El proceso demora entre 6 meses y 2 años, dependiendo del consulado y el comune italiano. La mayoría se resuelve en 12-18 meses.
+                    </p>
+                </div>
+
+                <h3 style="font-family: 'Crimson Text', serif; font-size: 1.5rem; margin: 30px 0 15px; color: var(--azul-oscuro);">Durante la espera:</h3>
+
+                <div class="tip-box">
+                    <h4>Qué podés hacer</h4>
+                    <p>
+                        • Consultá el estado online (si tu consulado tiene sistema)<br>
+                        • Guardá bien tu número de expediente<br>
+                        • Manteé actualizada tu info de contacto con el consulado<br>
+                        • Aprovechá para aprender italiano
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 6: Ciudadanía aprobada -->
+        <div class="step-section">
+            <div class="step-number">6</div>
+            <div class="step-header">
+                <h2 class="step-title">Ciudadanía Aprobada</h2>
+                <p class="step-subtitle">¡Lo lograste!</p>
+            </div>
+            <div class="step-content">
+                <p>
+                    Cuando Italia apruebe tu ciudadanía, el consulado te contactará.
+                </p>
+
+                <div class="success-box">
+                    <h4>¡Felicitaciones! 🇮🇹</h4>
+                    <p style="margin: 0; color: #2e7d32;">
+                        Sos oficialmente ciudadano/a italiano/a con todos los derechos de la Unión Europea. Este logro es para toda tu vida y se transmite a tus hijos y futuras generaciones.
+                    </p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Beneficios de tu ciudadanía</h4>
+                    <p>
+                        • Vivir, trabajar y estudiar en los 27 países de la UE sin permisos<br>
+                        • Viajar sin visa a más de 170 países<br>
+                        • Acceso a salud y educación pública europea<br>
+                        • Transmitir la ciudadanía a tus hijos automáticamente
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="zittano-logo.jpg" alt="Zittano" style="max-width: 200px; height: auto; margin-bottom: 30px; opacity: 0.9;">
+        <h3>¿Tenés dudas sobre el proceso?</h3>
+        <p>Nuestro equipo está para acompañarte en cada paso. No dudes en consultarnos.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>Email</h4>
+                <p>infozittano@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <h4>WhatsApp</h4>
+                <p>+54 11 7367-4060</p>
+            </div>
+            <div class="contact-item">
+                <h4>Horario</h4>
+                <p>Lun a Vie: 9:00 - 18:00</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.7;">
+            © 2024 Zittano - Todos los derechos reservados
+        </p>
+    </footer>
+
+    <!-- Botón imprimir -->
+    <button class="print-btn" onclick="window.print()" title="Imprimir guía">
+        🖨️
+    </button>
+
+    <script>
+        // Función para toggle de checklist
+        function toggleCheck(item) {
+            const checkbox = item.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+        }
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada en scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Guardar progreso en localStorage
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            // Cargar estado guardado
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+                checkbox.closest('.checklist-item').classList.add('checked');
+            }
+
+            // Guardar cambios
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+        });
+    </script>
+</body>
+</html>
