@@ -52,20 +52,28 @@
         .header {
             background: linear-gradient(135deg, var(--azul-oscuro) 0%, #2d4a6f 100%);
             color: white;
-            padding: 80px 40px 60px;
+            padding: 60px 40px 50px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .header::before {
-            content: '🇮🇹';
+            content: '';
             position: absolute;
-            font-size: 300px;
-            opacity: 0.05;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.03) 2px,
+                    rgba(255,255,255,0.03) 4px
+                );
+            pointer-events: none;
         }
 
         .header-content {
@@ -76,14 +84,36 @@
             animation: fadeInDown 0.8s ease-out;
         }
 
+        .logo-wrapper {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .logo-wrapper img {
+            max-width: 240px;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
         .brand {
-            font-family: 'Crimson Text', serif;
-            font-size: 1rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            font-weight: 400;
+            display: none;
         }
 
         .title {
@@ -617,8 +647,8 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="brand">
-                <img src="zittano-logo.jpg" alt="Zittano" style="max-width: 280px; height: auto; margin-bottom: 20px; filter: brightness(1.2);">
+            <div class="logo-wrapper">
+                <img src="zittano-logo.jpg" alt="Zittano - Gestoría de Ciudadanías">
             </div>
             <h1 class="title">Guía Completa<br>Turno Consular</h1>
             <p class="subtitle">Todo lo que necesitás saber después de recibir tu carpeta para presentarla en el consulado italiano</p>
@@ -655,6 +685,7 @@
                     <li>La carpeta esté completa (no falta ningún papel)</li>
                     <li>Todos los documentos estén en el orden correcto</li>
                     <li>No haya roturas, manchas o daños en ningún documento</li>
+                    <li>Todos los documentos que te entregamos sean los originales</li>
                 </ul>
 
                 <div class="warning-box">
@@ -781,7 +812,7 @@
                 <div class="warning-box">
                     <h4>Muy Importante</h4>
                     <p>
-                        NO olvides tu DNI y pasaporte originales. Sin estos documentos, no podrán atenderte aunque tengas todos los demás papeles en orden. Algunos consulados son muy estrictos con la puntualidad - si llegás tarde, podés perder tu turno.
+                        <strong>NO olvides tu DNI.</strong> Sin este documento, no podrán atenderte aunque tengas todos los demás papeles en orden. Algunos consulados son muy estrictos con la puntualidad - si llegás tarde, podés perder tu turno.
                     </p>
                 </div>
             </div>
